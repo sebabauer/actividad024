@@ -26,9 +26,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="<%= pages_home_path %>">HOME <span class="sr-only">(current)</span></a></li>
-            <li><a href="<%= pages_about_path %>">ABOUT</a></li>
-            <li><a href="<%= products_path %>">PRODUCTS</a></li>
+            <li class="<%= 'active' if params[:action]=='home'  %>"><a href="<%= pages_home_path %>">HOME</a></li>
+            <li class="<%= 'active' if params[:action]=='about' %>"><a href="<%= pages_about_path %>">ABOUT</a></li>
+            <li class="<%= 'active' if params[:controller]=='products' %>"><a href="<%= products_path %>">PRODUCTS</a></li>
 
           </ul>
 
@@ -37,7 +37,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-  <div class="container">      
+  <div class="container">
       <%= yield %>
   </div>
 
